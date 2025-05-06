@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React, { useEffect } from 'react';
+import api from './utils/api/get.api';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await api.get('/users');
+        console.log('API响应:', response);
+        return response;
+      } catch (error) {
+        console.error('请求异常:', error);
+      }
+    };
+    fetchData();
+  }, []);
+
+  return <div>应用内容</div>;
 }
 
 export default App;

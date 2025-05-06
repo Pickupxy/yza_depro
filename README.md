@@ -7,9 +7,9 @@ my-project/
 │   └── package.json  
 └── server/        # Node.js 后端代码  
     ├── routes/  
-    └── package.json:ml-citation{ref="1,7" data="citationList"}  
+    └── package.json
 
-1. npx create-react-app client  # 生成 React 项目:ml-citation{ref="3,6" data="citationList"}  
+1. npx create-react-app client  # 生成 React 项目
 2. cd server
 3. npm init -y  # 初始化 Node.js 项目
 4. npm install express
